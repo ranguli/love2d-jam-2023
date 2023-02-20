@@ -1,7 +1,9 @@
 local sti = require "lib/sti"
 local camera = require "lib/camera"
 local lovebird = require "lib/lovebird"
-local Concord = require("lib/concord")
+local concord = require("lib/concord")
+local wf = require("../lib/windfield")
+local timer = require("../lib/timer")
 
 player = {pos = {x = 0, y = 0}, speed = 15}
 entities = {}
@@ -10,25 +12,25 @@ DEFAULT_ASTEROID_X_VELOCITY = 5
 DEFAULT_ASTEROID_Y_VELOCITY = 15
 
 -- Defining components
-Concord.component("position", function(c, x, y)
+concord.component("position", function(c, x, y)
     c.x = x or 0
     c.y = y or 0
 end)
 
-Concord.component("velocity", function(c, x, y)
+concord.component("velocity", function(c, x, y)
     c.x = x or 0
     c.y = y or 0
 end)
 
-Concord.component("size", function(c, diameter)
+concord.component("size", function(c, diameter)
     c.diameter = diameter or 0
 end)
 
 
-local Drawable = Concord.component("drawable")
+local Drawable = concord.component("drawable")
 
 -- Defining Systems
-local MoveSystem = Concord.system({
+local MoveSystem = concord.system({
     pool = {"position", "velocity"}
 })
 
@@ -40,7 +42,7 @@ function MoveSystem:update(dt)
 end
 
 
-local DrawSystem = Concord.system({
+local DrawSystem = concord.system({
     pool = {"position", "drawable", "size"}
 })
 
@@ -50,9 +52,16 @@ function DrawSystem:draw()
     end
 end
 
+function spawn_asteroid()
+    local size = math.random(25,50)
+    asteroid = phys_world:newRectangleCollider(math.random(0,love.graphics.getWidth()), -125, size, size)
+    asteroid:applyAngularImpulse(love.math.random(-500,500))
+    asteroid:applyLinearImpulse(math.random(-100,100), love.math.random(100,100))
+    table.insert(colliders, asteroid)
+end
 
 -- Create the World
-local world = Concord.world()
+local world = concord.world()
 
 -- Add the Systems
 world:addSystems(MoveSystem, DrawSystem)
@@ -61,6 +70,14 @@ function love.load()
     love.graphics.setDefaultFilter("nearest", "nearest")
     map = sti("testmap.lua")
     initial_asteroids = map.layers["asteroids"].objects
+
+    phys_world = wf.newWorld(0, 0, true)
+    phys_world:setQueryDebugDrawing(true) -- Draws the area of a query for 10 frames
+    phys_world:setGravity(0,50)
+
+    colliders = {}
+    asteroid_timer = timer.new()
+    asteroid_timer:every(0.1, function() spawn_asteroid() end)
 
     camera = camera(player.x, player.y)
 
@@ -71,7 +88,7 @@ end
 
 function create_entities(asteroids)
     for i,asteroid in pairs(asteroids) do
-        local entity = Concord.entity(world)
+        local entity = concord.entity(world)
         entity:give("position", asteroid.x, asteroid.y)
 
         local x_velocity = DEFAULT_ASTEROID_X_VELOCITY
@@ -108,6 +125,9 @@ end
 function love.update(dt)
     lovebird.update()
 
+    asteroid_timer:update(dt)
+    phys_world:update(dt)
+
     if love.keyboard.isDown("right") then
         player.pos.x = player.pos.x + player.speed
     end
@@ -134,6 +154,7 @@ end
 function love.draw()
     camera:attach()
         map:drawLayer(map.layers["background"])
+        phys_world:draw() -- Draws the colliders/hitboxes, for debugging only
         love.graphics.circle("fill", player.pos.x, player.pos.y, 15)
         world:emit("draw")
     camera:detach()
