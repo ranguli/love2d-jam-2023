@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.8" tiledversion="1.8.0" orientation="orthogonal" renderorder="right-down" width="69" height="500" tilewidth="32" tileheight="32" infinite="0" nextlayerid="8" nextobjectid="237">
+<map version="1.8" tiledversion="1.8.0" orientation="orthogonal" renderorder="right-down" width="69" height="500" tilewidth="32" tileheight="32" infinite="0" nextlayerid="8" nextobjectid="239">
  <editorsettings>
   <export target="testmap.lua" format="lua"/>
  </editorsettings>
@@ -9,6 +9,7 @@
   <object id="230" type="Food" x="1144" y="15408" width="8" height="8"/>
   <object id="231" type="Food" x="1112" y="15424" width="8" height="8"/>
   <object id="232" type="Food" x="1184" y="15432" width="8" height="8"/>
+  <object id="233" type="Food" x="1040" y="15528" width="8" height="8"/>
   <object id="234" type="Food" x="1256" y="15512" width="8" height="8"/>
   <object id="235" type="Food" x="1192" y="15560" width="8" height="8"/>
   <object id="236" type="Food" x="1216" y="15440" width="8" height="8"/>

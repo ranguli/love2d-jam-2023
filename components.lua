@@ -12,7 +12,7 @@ Concord.component("speed", function(component, s)
     component.speed = s or 2
 end)
 
-Concord.component("position", function(component, x, y)
+Concord.component("pos", function(component, x, y)
     component.x = x or 0
     component.y = y or 0
 end)

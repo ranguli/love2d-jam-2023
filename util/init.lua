@@ -28,7 +28,7 @@ function util.load_map(mapfile, world)
         entity:give("color", r, g, b)
         log.debug(entity_string .. " had its entity given a color component of " .. inspect({r=r,g=g,b=b}))
 
-        entity:give("position", x, y)
+        entity:give("pos", x, y)
         log.debug(entity_string .. " had its entity given a position component of x:" .. x .. " y:" .. y)
 
         entity:give("size", w, h)
@@ -38,9 +38,11 @@ function util.load_map(mapfile, world)
             entity:give("player")
             entity:give("speed")
             log.debug(entity_string .. " had its entity given a player component")
+
         elseif tiled_object["type"] == "Obstacle" then
             entity:give("obstacle")
             log.debug(entity_string .. " had its entity given an obstacle component")
+
         elseif tiled_object["type"] == "Food" then
             entity:give("food")
             entity:give("color", 0.25, 0.75, 0.25)

@@ -9,7 +9,7 @@ return {
   tilewidth = 32,
   tileheight = 32,
   nextlayerid = 8,
-  nextobjectid = 237,
+  nextobjectid = 239,
   properties = {},
   tilesets = {},
   layers = {
@@ -85,6 +85,19 @@ return {
           shape = "rectangle",
           x = 1184,
           y = 15432,
+          width = 8,
+          height = 8,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 233,
+          name = "",
+          type = "Food",
+          shape = "rectangle",
+          x = 1040,
+          y = 15528,
           width = 8,
           height = 8,
           rotation = 0,

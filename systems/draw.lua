@@ -4,7 +4,7 @@ local inspect = require("lib/inspect")
 local moonshine = require("lib/moonshine")
 
 local DrawSystem = Concord.system({
-	pool = {"position"},
+	pool = {"pos"},
     player = {"player"}
 })
 
@@ -22,7 +22,8 @@ function DrawSystem:draw()
 
     if not set_camera then
         local player = self.player[1]
-        camera:lookAt(player.position.x, player.position.y)
+        camera:lookAt(player.pos.x, player.pos.y)
+        camera.scale = 2
         set_camera = true
     end
 
@@ -30,8 +31,8 @@ function DrawSystem:draw()
     camera:attach()
 
     for i, e in ipairs(self.pool) do
-        local x = e.position.x
-        local y = e.position.y
+        local x = e.pos.x
+        local y = e.pos.y
 
         local w = e.size.w
         local h = e.size.h

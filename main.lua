@@ -23,7 +23,7 @@ local camera = camera(0,0)
 
 gameworld:setResource("camera", camera)
 
-util.load_map("levels/testmap.lua", gameworld, physics_world)
+util.load_map("levels/testmap.lua", gameworld)
 
 function love.load()
     love.window.setMode(800,600, {msaa = 8})
