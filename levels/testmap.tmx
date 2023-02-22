@@ -1,40 +1,136 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.8" tiledversion="1.8.0" orientation="orthogonal" renderorder="right-down" width="69" height="500" tilewidth="32" tileheight="32" infinite="0" nextlayerid="8" nextobjectid="239">
+<map version="1.9" tiledversion="1.9.2" orientation="orthogonal" renderorder="right-down" width="23" height="700" tilewidth="16" tileheight="16" infinite="0" nextlayerid="11" nextobjectid="323">
  <editorsettings>
   <export target="testmap.lua" format="lua"/>
  </editorsettings>
  <objectgroup id="7" name="Custom Game Objects">
-  <object id="192" name="Player" type="Player" x="1168" y="15768" width="24" height="24"/>
-  <object id="229" type="Food" x="1112" y="15496" width="8" height="8"/>
-  <object id="230" type="Food" x="1144" y="15408" width="8" height="8"/>
-  <object id="231" type="Food" x="1112" y="15424" width="8" height="8"/>
-  <object id="232" type="Food" x="1184" y="15432" width="8" height="8"/>
-  <object id="233" type="Food" x="1040" y="15528" width="8" height="8"/>
-  <object id="234" type="Food" x="1256" y="15512" width="8" height="8"/>
-  <object id="235" type="Food" x="1192" y="15560" width="8" height="8"/>
-  <object id="236" type="Food" x="1216" y="15440" width="8" height="8"/>
+  <object id="192" name="Player" class="Player" x="176" y="10944" width="16" height="16"/>
+ </objectgroup>
+ <objectgroup color="#2ec27e" id="9" name="Medium Food" tintcolor="#2ec27e">
+  <object id="299" class="Food" x="192" y="8192" width="16" height="16">
+   <properties>
+    <property name="nutritional_value" type="int" value="5"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup color="#1c71d8" id="8" name="Small Food" tintcolor="#1a5fb4">
+  <object id="229" class="Food" x="168" y="8576" width="8" height="8">
+   <properties>
+    <property name="nutritional_value" type="int" value="1"/>
+   </properties>
+  </object>
+  <object id="230" class="Food" x="200" y="8488" width="8" height="8">
+   <properties>
+    <property name="nutritional_value" type="int" value="1"/>
+   </properties>
+  </object>
+  <object id="231" class="Food" x="180" y="10692" width="8" height="8">
+   <properties>
+    <property name="nutritional_value" type="int" value="1"/>
+   </properties>
+  </object>
+  <object id="235" class="Food" x="248" y="8640" width="8" height="8">
+   <properties>
+    <property name="nutritional_value" type="int" value="1"/>
+   </properties>
+  </object>
+  <object id="245" class="Food" x="96" y="8624" width="8" height="8">
+   <properties>
+    <property name="nutritional_value" type="int" value="1"/>
+   </properties>
+  </object>
+  <object id="246" class="Food" x="256" y="8552" width="8" height="8">
+   <properties>
+    <property name="nutritional_value" type="int" value="1"/>
+   </properties>
+  </object>
+  <object id="247" class="Food" x="272" y="8488" width="8" height="8">
+   <properties>
+    <property name="nutritional_value" type="int" value="1"/>
+   </properties>
+  </object>
+  <object id="255" class="Food" x="352" y="8576" width="8" height="8">
+   <properties>
+    <property name="nutritional_value" type="int" value="1"/>
+   </properties>
+  </object>
+  <object id="305" class="Food" x="200" y="9796" width="8" height="8">
+   <properties>
+    <property name="nutritional_value" type="int" value="1"/>
+   </properties>
+  </object>
+  <object id="306" class="Food" x="196" y="10500" width="8" height="8">
+   <properties>
+    <property name="nutritional_value" type="int" value="1"/>
+   </properties>
+  </object>
+  <object id="307" class="Food" x="132" y="10196" width="8" height="8">
+   <properties>
+    <property name="nutritional_value" type="int" value="1"/>
+   </properties>
+  </object>
+  <object id="322" class="Food" x="196" y="9988" width="8" height="8">
+   <properties>
+    <property name="nutritional_value" type="int" value="1"/>
+   </properties>
+  </object>
  </objectgroup>
  <objectgroup color="#e01b24" id="4" name="Obstacles" tintcolor="#e01b24">
-  <object id="188" type="Obstacle" x="1088" y="15536" width="41.3701" height="41.3386"/>
-  <object id="189" type="Obstacle" x="1048" y="15256" width="56" height="56"/>
-  <object id="190" type="Obstacle" x="1408" y="15688" width="48" height="48"/>
-  <object id="191" type="Obstacle" x="984" y="15624" width="40" height="40"/>
-  <object id="195" type="Obstacle" x="1208" y="15656" width="17.3518" height="17.3386"/>
-  <object id="196" type="Obstacle" x="1272" y="15672" width="17.3518" height="17.3386"/>
-  <object id="197" type="Obstacle" x="1104" y="15664" width="17.3518" height="17.3386"/>
-  <object id="198" type="Obstacle" x="1352" y="15512" width="17.3518" height="17.3386"/>
-  <object id="199" type="Obstacle" x="1240" y="15560" width="17.3518" height="17.3386"/>
-  <object id="200" type="Obstacle" x="1264" y="15448" width="17.3518" height="17.3386"/>
-  <object id="201" type="Obstacle" x="1088" y="15376" width="17.3518" height="17.3386"/>
-  <object id="202" type="Obstacle" x="944" y="15504" width="17.3518" height="17.3386"/>
-  <object id="203" type="Obstacle" x="984" y="15536" width="17.3518" height="17.3386"/>
-  <object id="204" type="Obstacle" x="1184" y="15496" width="41.3701" height="41.3386"/>
-  <object id="205" type="Obstacle" x="1048" y="15440" width="41.3701" height="41.3386"/>
-  <object id="206" type="Obstacle" x="1256" y="15344" width="56" height="56"/>
-  <object id="207" type="Obstacle" x="1352" y="15280" width="56" height="56"/>
-  <object id="208" type="Obstacle" x="1224" y="15240" width="56" height="56"/>
-  <object id="209" type="Obstacle" x="1008" y="15392" width="17.3518" height="17.3386"/>
-  <object id="210" type="Obstacle" x="1176" y="15360" width="17.3518" height="17.3386"/>
-  <object id="211" type="Obstacle" x="1152" y="15456" width="17.3518" height="17.3386"/>
+  <object id="190" class="Obstacle" x="256" y="8720" width="48" height="48"/>
+  <object id="191" class="Obstacle" x="96" y="8664" width="40" height="40">
+   <properties>
+    <property name="velocity" type="class"/>
+   </properties>
+  </object>
+  <object id="195" class="Obstacle" x="184" y="8664" width="17.3518" height="17.3386"/>
+  <object id="196" class="Obstacle" x="240" y="8680" width="17.3518" height="17.3386"/>
+  <object id="197" class="Obstacle" x="160" y="8744" width="17.3518" height="17.3386"/>
+  <object id="199" class="Obstacle" x="296" y="8640" width="17.3518" height="17.3386"/>
+  <object id="200" class="Obstacle" x="320" y="8528" width="17.3518" height="17.3386"/>
+  <object id="204" class="Obstacle" x="240" y="8576" width="41.3701" height="41.3386"/>
+  <object id="205" class="Obstacle" x="32" y="8608" width="41.3701" height="41.3386"/>
+  <object id="206" class="Obstacle" x="288" y="8408" width="56" height="56"/>
+  <object id="208" class="Obstacle" x="280" y="8320" width="56" height="56"/>
+  <object id="210" class="Obstacle" x="232" y="8440" width="17.3518" height="17.3386"/>
+  <object id="211" class="Obstacle" x="192" y="8536" width="17.3518" height="17.3386"/>
+  <object id="241" class="Obstacle" x="144" y="8336" width="17.3518" height="17.3386"/>
+  <object id="242" class="Obstacle" x="224" y="8344" width="17.3518" height="17.3386"/>
+  <object id="248" class="Obstacle" x="72" y="8384" width="56" height="56"/>
+  <object id="249" class="Obstacle" x="144" y="8465.3" width="8" height="7.99391"/>
+  <object id="259" class="Obstacle" x="96" y="8328" width="17.3518" height="17.3386"/>
+  <object id="260" class="Obstacle" x="56" y="8472" width="41.3701" height="41.3386"/>
+  <object id="293" class="Obstacle" x="112" y="8528" width="41.3701" height="41.3386"/>
+  <object id="295" class="Obstacle" x="48" y="8368" width="17.3518" height="17.3386"/>
+  <object id="300" template="medium_obstacle.tx" class="Obstacle" x="240" y="10552"/>
+  <object id="301" class="Obstacle" x="96" y="10336" width="48" height="48"/>
+  <object id="302" class="Obstacle" x="208" y="10176" width="48" height="48"/>
+  <object id="304" class="Obstacle" x="144" y="9696" width="36" height="128"/>
+  <object id="297" class="Obstacle" x="-16" y="0" width="16" height="11200"/>
+  <object id="298" class="Obstacle" x="368" y="0" width="16" height="11200"/>
+  <object id="313" class="Food" x="132" y="9508" width="8" height="8">
+   <properties>
+    <property name="nutritional_value" type="int" value="1"/>
+   </properties>
+  </object>
+  <object id="314" class="Obstacle" x="160" y="9488" width="48" height="48"/>
+  <object id="315" class="Obstacle" x="64" y="9440" width="32" height="96"/>
+  <object id="316" class="Food" x="36" y="9508" width="8" height="8">
+   <properties>
+    <property name="nutritional_value" type="int" value="1"/>
+   </properties>
+  </object>
+  <object id="317" class="Food" x="228" y="9508" width="8" height="8">
+   <properties>
+    <property name="nutritional_value" type="int" value="1"/>
+   </properties>
+  </object>
+  <object id="318" class="Obstacle" x="256" y="9488" width="48" height="48"/>
+  <object id="319" class="Food" x="324" y="9508" width="8" height="8">
+   <properties>
+    <property name="nutritional_value" type="int" value="1"/>
+   </properties>
+  </object>
+  <object id="320" class="Obstacle" x="336" y="9488" width="48" height="48"/>
+  <object id="321" class="Obstacle" x="228" y="9696" width="36" height="128"/>
  </objectgroup>
 </map>

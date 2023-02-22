@@ -7,7 +7,7 @@ local CollisionSystem = Concord.system({
     player = {"player"}
 })
 
-function CollisionSystem:update(dt)
+function CollisionSystem:update()
     local world = self:getWorld()
     local camera = world:getResource("camera")
 
@@ -35,7 +35,8 @@ function CollisionSystem:check_collision(player, entity)
             love.event.quit()
         elseif entity.food then
              -- Callback or some ECS magic here?
-             entity:destroy()
+             --world:emit("eaten")
+             entity:give("eaten")
         end
     end
 end

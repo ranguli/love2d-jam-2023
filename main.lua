@@ -11,6 +11,8 @@ local util = require("util")
 local MoveSystem = require("systems.move")
 local DrawSystem = require("systems.draw")
 local CollisionSystem = require("systems.collision")
+local FoodSystem = require("systems.food")
+local SoundEffectSystem = require("systems.soundeffect")
 
 -- Create the World
 local gameworld = Concord.world()
@@ -18,6 +20,8 @@ local gameworld = Concord.world()
 gameworld:addSystem(MoveSystem)
 gameworld:addSystem(DrawSystem)
 gameworld:addSystem(CollisionSystem)
+gameworld:addSystem(FoodSystem)
+gameworld:addSystem(SoundEffectSystem)
 
 local camera = camera(0,0)
 
@@ -27,7 +31,7 @@ util.load_map("levels/testmap.lua", gameworld)
 
 function love.load()
     love.window.setMode(800,600, {msaa = 8})
-    love.graphics.setDefaultFilter("nearest", "nearest")
+    --love.graphics.setDefaultFilter("nearest", "nearest")
     -- Load objects and player from the map, create their entities
 end
 
@@ -39,5 +43,4 @@ end
 
 function love.draw()
     gameworld:emit("draw")
-    --physics_world:draw(255)
 end

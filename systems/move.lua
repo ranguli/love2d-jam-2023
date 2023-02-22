@@ -9,37 +9,29 @@ local MoveSystem = Concord.system({
 
 function MoveSystem:update(dt)
     local player = self.player[1]
-    local key_press = false
+
+    -- TODO: convert to vectors
 
     if love.keyboard.isDown("w") then
-        player.pos.y = player.pos.y - player.speed.speed
-        key_press = true
+        log.warn(player.speed.s)
+        player.pos.y = player.pos.y - (player.speed.s * dt)
     end
 
     if love.keyboard.isDown("s") then
-        player.pos.y = player.pos.y + player.speed.speed
-        key_press = true
+        player.pos.y = player.pos.y + (player.speed.s * dt)
     end
 
     if love.keyboard.isDown("a") then
-        key_press = true
-        player.pos.x = player.pos.x - player.speed.speed
+        player.pos.x = player.pos.x - (player.speed.s * dt)
     end
 
     if love.keyboard.isDown("d") then
-        key_press = true
-        player.pos.x = player.pos.x + player.speed.speed
+        player.pos.x = player.pos.x + (player.speed.s * dt)
     end
-
-    if key_press then
-        log.debug("Move player to " .. inspect({x = player.pos.x, y = player.pos.y}))
-    end
-
-    --log.debug("Mouse: " .. inspect(mouse))
 
     for i, e in ipairs(self.pool) do
         if e.obstacle or e.food then
-            e.pos.y = e.pos.y + e.speed.speed
+            e.pos.y = e.pos.y + (e.speed.s * dt)
         end
     end
 end

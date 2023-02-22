@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objecttypes>
+ <objecttype name="Food" color="#1a5fb4"/>
+ <objecttype name="Obstacle" color="#e01b24">
+  <property name="color" type="color" default="#ff63452c"/>
+ </objecttype>
+ <objecttype name="Player" color="#26a269">
+  <property name="color" type="color" default="#ffffffff"/>
+ </objecttype>
+</objecttypes>

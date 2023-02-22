@@ -1,0 +1,27 @@
+{
+    "activeFile": "testmap.tmx",
+    "expandedProjectPaths": [
+        "."
+    ],
+    "fileStates": {
+        "testmap.tmx": {
+            "scale": 1.0665,
+            "selectedLayer": 3,
+            "viewCenter": {
+                "x": 263.4786685419597,
+                "y": 8398.499765588374
+            }
+        }
+    },
+    "last.objectTemplatePath": "/home/joshu/Dropbox/Projects/gamejam/levels",
+    "mapScene.enableWorlds": false,
+    "openFiles": [
+        "testmap.tmx"
+    ],
+    "project": "testmap.tiled-project",
+    "property.type": "Vec2",
+    "recentFiles": [
+        "testmap.tmx"
+    ],
+    "resizeMap.removeObjects": false
+}

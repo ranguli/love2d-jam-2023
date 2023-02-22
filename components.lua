@@ -1,15 +1,22 @@
 local Concord = require("lib/concord")
 
+Concord.component("dead")
+Concord.component("eaten")
 Concord.component("obstacle")
+Concord.component("food")
 
 Concord.component("player")
 
-Concord.component("food", function(component, f)
-    component.f = f or 1
+Concord.component("nutritional_value", function(component, val)
+    component.val = val or 1
+end)
+
+Concord.component("nutritional_intake", function(component, val)
+    component.val = val or 0
 end)
 
 Concord.component("speed", function(component, s)
-    component.speed = s or 2
+    component.s = s or 150
 end)
 
 Concord.component("pos", function(component, x, y)
